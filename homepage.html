@@ -91,6 +91,9 @@
             </div>
             <script>
                 function getBotResponse() {
+
+                  let PASTE_YOUR_LINK_HERE = "http://192.168.32.208:8080"//-------------------PASTE HERE-------------------------
+
                   var rawText = $("#textInput").val();
                   var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
                   $("#textInput").val("");
@@ -101,7 +104,7 @@
 
                   //the request
                   $.ajax({
-                      url: "http://192.168.32.208:8080/getReply", //replace it with the current address the server is running on
+                      url: PASTE_YOUR_LINK_HERE+"/getReply",
                       type: "POST",
                       contentType: "application/json",
                       data: JSON.stringify({ prompt: rawText }),
